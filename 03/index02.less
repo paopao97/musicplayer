@@ -1,0 +1,122 @@
+#app {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: url(./images/bg02.jpeg);
+    background-size: 100% 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    --themeColor: #6ce7ab;
+    .playr {
+        border-radius: 10px;
+        width: 800px;
+        height: 600px;
+        border: 1px solid var(--themeColor);
+        .playr-top {
+            display: flex;
+            justify-content: space-between;
+            height: 60px;
+            align-items: center;
+            background-color: var(--themeColor);
+            padding: 5px;
+        .left {
+            color: white;
+            // 设置文本的粗细
+            font-weight: 300;
+        }
+  
+        .right {
+            display: flex;
+            position: relative;
+            margin: 0 20px;
+          input {
+            width: 300px;
+            height: 30px;
+            border: 0;
+            border-radius: 20px;
+            // 规定文本块中首行文本的缩进
+            text-indent: 15px;
+          }
+  
+          section {
+              position: absolute;
+              right: 10px;
+              top: 5px;
+            img {
+                height: 80%;
+                width: 80%;
+            }
+          }
+        }
+        }
+        .playr-middle {
+            height: 480px;
+            width: 800px;
+            display: flex;
+            border-bottom: 1px solid var (var(--themeColor));
+            .left {
+                height: 100%;
+                width: 200px;
+                border-right: 1px dashed var(--themeColor);
+                section {
+            
+                }
+            }
+        
+            .middle {
+                height: 100%;
+                width: 400px;
+                position: relative;
+                border-right: 1px dashed var(--themeColor);
+                .music-phtoto01 {
+                    
+                    img {
+                        width: 80px;
+                        height: 50px;
+                        position: absolute;
+                        left: 200px;
+                    }
+                }
+        
+                .music-phtoto02 {
+                    img {
+                        width: 150px;
+                        height: 150px;
+                        position: absolute;
+                        top: 40px;
+                        left: 120px;
+                        z-index: 2;
+                    }
+                }
+                .music-phtoto03 {
+                    img {
+                        width: 100px;
+                        height: 100px;
+                        position: absolute;
+                        top: 64px;
+                        left: 140px;
+                        border-radius: 50%;
+            
+                    }
+                }
+            }
+            .right {
+                flex: 3;
+                section {
+
+                }
+            }
+        }
+        .footer {
+            height: 60px;
+            width: 800px;
+            background-color: #fff;
+            audio {
+                height: 100%;
+                width: 100%;
+            }
+        }
+
+    }
+  }

@@ -1,0 +1,256 @@
+#app {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: url(./images/bg.jpeg);
+    background-size: 100% 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    --themeColor: #303b2f;
+    .show{
+        display: block;
+    }
+    .hidden{
+        display: none;
+    }
+    @keyframes running {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+    .playr {
+        border-radius: 10px;
+        width: 800px;
+        height: 600px;
+        border: 1px solid var(--themeColor);
+        .playr-top {
+            display: flex;
+            justify-content: space-between;
+            height: 60px;
+            align-items: center;
+            background-color: var(--themeColor);
+            padding: 5px;
+        .left {
+            color: white;
+            // 设置文本的粗细
+            font-weight: 300;
+        }
+  
+        .right {
+            display: flex;
+            position: relative;
+            margin: 0 20px;
+          input {
+            width: 300px;
+            height: 30px;
+            border: 0;
+            border-radius: 20px;
+            // 规定文本块中首行文本的缩进
+            text-indent: 15px;
+          }
+  
+          section {
+              position: absolute;
+              right: 10px;
+              top: 5px;
+            img {
+                height: 80%;
+                width: 80%;
+            }
+          }
+        }
+        }
+        .playr-middle {
+            height: 480px;
+            width: 800px;
+            display: flex;
+            border-bottom: 1px solid var (var(--themeColor));
+            .left {
+                height: 100%;
+                width: 200px;
+                border-right: 1px dashed var(--themeColor);
+                // hidden 裁剪内容 - 不提供滚动机制。
+                overflow-x: hidden;
+                // scroll  裁剪内容 - 提供滚动机制。
+                overflow-y: scroll;
+                .music-content-list {
+                    .music-content-list-itme {
+                        height: 40px;
+                        display: flex;
+                        align-items: center;
+                      .item-audio {
+                        width: 25px;
+                        height: 25px;
+                        background: url(images/table.png) -18px -18px;
+                        
+                      }
+                
+                      .item-name {
+                        height: 30px;
+                        line-height: 30px;
+                        font-size: 16px;
+                    // text-align  规定元素中的文本的水平对齐方式
+                        text-align: center;
+                        width: 145px;
+                        color: white;
+                        overflow: hidden;
+                    // ellipsis 显示省略符号来代表被修剪的文本。
+                        text-overflow: ellipsis;
+                        // nowrap 规定段落中的文本不进行换行
+                        white-space: nowrap;
+                      }
+                
+                      .item-mv {
+                        width: 30px;
+                        height: 20px;
+                        background: url(images/table.png) left -45px;
+                      }
+                    }
+                    .music-content-list-itme:nth-child(odd) {
+                        background-color: rgba(224, 217, 217, 0.5);
+                    }
+                }
+            }
+        
+            .middle {
+                height: 100%;
+                width: 400px;
+                border-right: 1px dashed var(--themeColor);
+                position: relative;
+                .playing{
+                    transform: rotate(0) !important;
+                }
+                .player-bar {
+                    left: 200px;
+                    position: absolute;
+                    z-index: 8;
+                    transform: rotate(-25deg);
+                    transform-origin: 12px 12px;
+                    transform: all 2s;
+                }
+              
+                .cover {
+                    top: 156px;
+                    left: 156px;
+                    position: absolute;
+                    width: 150px;
+                    height: 150px;
+                }
+                .autorotate {
+                    // 为@keyframes 动画规定一个名称
+                    animation-name           : running;
+                    animation-duration       : 10s;
+                    // 规定动画的速度曲线
+                    animation-timing-function: linear;
+                    // 规定动画应该播放的次数
+                    animation-iteration-count: infinite;
+                }
+                .disc{
+                  position: absolute;
+                  left: 100px;
+                  top: 100px;
+                }
+              }
+            .right {
+                width: 200px;
+                height: 100%;
+                overflow-x: hidden;
+                overflow-y: scroll;
+                h4 {
+              
+                }
+              
+                .app-comments-list {
+                  .app-comments-list-item {
+                      padding: 5px;
+                      display: flex;
+                    .item-left {
+                        padding: 5px;
+                      img {
+                        width: 30px;
+                        border-radius: 50%;
+                        height: 30px;
+                      }
+                    }
+              
+                    .item-right {
+                      .nickname {
+                        font-size: 16px;
+                      }
+              
+                      .content {
+                        font-size: 12px;
+                        color: white;
+                      }
+                    }
+                  }
+                }
+              }
+        }
+        .footer {
+            height: 60px;
+            width: 800px;
+            background-color: #fff;
+            audio {
+                height: 100%;
+                width: 100%;
+            }
+            .app-vedio-box{
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                .app-mask {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    background-color: black;
+                    width: 100vw;
+                    height: 100vh;
+              
+                }
+              
+                .app-vedio-close {
+                    position: fixed;
+                    top: 10px;
+                    right: 10px;
+                    font-size: 30px;
+                    color: white;
+              
+                }
+              
+                video {
+                    z-index: 999;
+                    background-color: #fff;
+                    position: fixed;
+                    transform: translate(-50%,-50%);
+                    top: 50%;
+                    left: 50%;
+                    width: 800px;
+                    height: 600px;
+                }
+              }
+        }
+
+    }
+    .loading{
+        position: fixed;
+        height: 100vh;
+        width: 100xw;
+        z-index: 2000;
+        img {
+            transform: translate(-50%,-50%);
+            position: fixed;
+            z-index: 3000;
+            width: 300px;
+            height: 200px;
+            left: 50%;
+            top: 50%;
+        }
+    }
+  }
